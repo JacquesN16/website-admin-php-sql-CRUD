@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Cocktail</title>
+    
+    <!-- BOOTSTRAP 4.4 https://getbootstrap.com/docs/4.4/getting-started/introduction/ -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400">
+    
+    <!--Font GOOGLE https://fonts.google.com/specimen/Krona+One?preview.text_type=custom-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
+
+    <!-- css source C:\xampp\htdocs\mysite\jour6php\bd5926732641259-cocktails - départ\cocktails - de╠üpart\www\css\cocktails.css -->
+    <link rel="stylesheet" href="www/css/cocktails.css">
+
+    <!-- Font Awesome 4.7 icon: https://fontawesome.com/v4.7.0/get-started/ link: https://cdnjs.com/libraries/font-awesome/4.7.0-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+<body  class="container-fluid">
+<h2><a href="php/index.php" >Accueil</a></h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            
+            <th scope="col">Date conception</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Modifier</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($cocktails as $cocktail):
+        ?>
+        <tr>
+            <td><?= htmlspecialchars($cocktail['cocktail_id']);?> </td>
+            <td><?= htmlspecialchars($cocktail['Nom']); ?></td>
+            <td><?= htmlspecialchars($cocktail['Description']); ?></td>
+            <td><?= htmlspecialchars($cocktail['dateConception']); ?></td>
+            <td><?= htmlspecialchars($cocktail['Prix_indicatif']); ?></td>
+            <td><a href="lib/delete.php?id=<?= $cocktail['cocktail_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>  
+                <a href="lib/update.php?id=<?= $cocktail['cocktail_id']?>"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        </tr>
+        <?php endforeach;
+        ?>
+    
+    
+    </tbody>
+    
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Cocktail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400">
+    
+    <link rel="stylesheet" href="www/css/cocktails.css">
+</head>
+<body class="container-fluid">
+    <header>
+        
+        <h1>Mister Cocktail</h1>
+    </header>
+
+    <!--breadcrumb-->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="php/index.php">Accueil</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($cocktails['Nom']);?></li>
+           
+        </ol>
+    </nav>
+    <article class="card mb-3">
+        <h4><?= $cocktails['Nom'];?></h4>
+        <section class="row g-0">
+            <div class="col-md-4">
+                <img src="www/images/cocktails/<?= $cocktails['Photo_url'];?>" alt="photo-cocktail">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><?= htmlspecialchars($cocktails['Description']);?></p>
+                    <p class="card-text"><small class="text-muted">Prix : <?= htmlspecialchars($cocktails['Prix_indicatif']);?> €</small></p>
+                </div>
+            </div>
+        </section>
+    </article>
+    
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    background: linear-gradient(to bottom, #bbd7fc, #00aaf8);
+    font-family: Montserrat, sans-serif;
+    max-width: 1024px;
+    min-height: 100vh;
+    padding: 2rem 0;
+    
+}
+
+h2
+{
+    color: #19547b;
+    text-decoration: underline;
+    text-decoration-color: #19547b;
+}
+h4
+{
+    color: #19547b;
+}
+
+main
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav
+{
+    margin-bottom: 2rem;
+    width: 100%;
+    font-family: 'Krona One', sans-serif;
+}
+
+.cocktail
+{
+    margin-bottom: 3rem;
+    width: 16rem;
+}
+.cocktail .card-text
+{
+    font-size: 90%;
+    text-align: justify;
+}
+
+form{
+    margin: 5em auto;
+    width: 80%;
+    border:1px solid #0e0d0d;
+    padding:2em;  
+}
+
+form fieldset{
+    display:flex;
+    flex-direction: column;
+    width: 47%;
+    justify-content: space-between;
+}
+form fieldset input,
+form fieldset textarea{
+    border-radius: 15px;
+    -moz-appearance: textfield;
+}
+
+form button{
+    margin: 10px 0;
+    background-color: seagreen;
+    color:white;
+    padding:5px;
+    border-radius: 15px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Cocktail</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400">
+    <!--Font GOOGLE-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../www/css/cocktails.css">
+    
+    
+</head>
+<body class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="../php/index.php"><img src="../www/images/logo/clovis-wood-photography-FT1PJqW0qtE-unsplash.jpg " alt="logo" style="max-width:80px"></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../formulaire.php">Idée cocktail</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../admin.php">Tous les Cocktails</a>
+                </li>
+            </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav>
+        <a href="index.php">Accueil</a>
+        <h1>Mister Cocktail</h1>
+    </nav>
+
+    <main>
+    <?php foreach($cocktails as  $cocktail):
+            ?>
+    <article class="card cocktail">
+        
+        <img class="card-img-top" src="../www/images/cocktails/<?= $cocktail['Photo_url'];?>" alt="photo-cocktail"></img>
+        
+        <div class="card-body">
+            <h4><a href="../cocktail.php?id=<?= $cocktail['cocktail_id']?>"><?= $cocktail['Nom'];?></a></h4>
+            <p><?= $cocktail['Description'];?></p>
+            <p>Prix : <?= $cocktail['Prix_indicatif'];?>€</p>
+        </div>
+        
+    </article>
+    <?php endforeach;?>
+    </main>
+</body>
+</html>

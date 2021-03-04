@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Cocktail</title>
+    
+
+    <!--Font GOOGLE-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400">
+   
+    <link rel="stylesheet" href="www/css/form.css">
+    
+
+</head>
+<body class="container-fluid">
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="php/index.php"><img src="www/images/logo/clovis-wood-photography-FT1PJqW0qtE-unsplash.jpg " alt="logo" style="max-width:80px"></a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="php/index.php">Home</a>
+                    </li>
+                </ul>
+                </div>
+                </div>
+            </nav>
+    </header>
+    
+    <form enctype="multipart/form-data" action="lib\add.php" method="POST">
+        <fieldset>
+        <legend> Fabric votre cocktail</legend>
+            <label for="Nom">Nom</label>
+            <input type="text" id="Nom" name="nom">
+            <label for="Description">Description</label>
+            <textarea type="textarea" id="Description" rows="4" cols="50" name="description"></textarea>
+            <label for="Photo_url">Photo</label>
+            <!-- MAX_FILE_SIZE must precede the file input field -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000" >
+
+            <input type="file" id="Photo_url" name="userfile">
+            <label for="dateConception">Date conception</label>
+            <input type="date" id="dateConception" name="dateConception">
+            <label for="prix">Prix proposé</label>
+            <input type="number" id="prix" name="prix">
+            <button type="submit" value="Send File">Soumettre</button>
+        </fieldset>
+    </form>
+</body>
+</html>
